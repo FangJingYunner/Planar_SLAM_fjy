@@ -2,7 +2,8 @@
 
 data
 Log
-.idea
+config/RGB*
+
 # Prerequisites
 *.d
 

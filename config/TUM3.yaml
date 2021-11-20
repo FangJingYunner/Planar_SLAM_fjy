@@ -5,16 +5,23 @@
 #--------------------------------------------------------------------------------------------
 
 # Camera calibration and distortion parameters (OpenCV)
-Camera.fx: 535.4
-Camera.fy: 539.2
-Camera.cx: 320.1
-Camera.cy: 247.6
+#Camera.fx: 535.4
+#Camera.fy: 539.2
+#Camera.cx: 320.1
+#Camera.cy: 247.6
 
-Camera.k1: 0.0
-Camera.k2: 0.0
-Camera.p1: 0.0
-Camera.p2: 0.0
+#RGB-D
+Camera.fx: 902.4767772112169
+Camera.fy: 901.8003357669888
+Camera.cx: 637.5716836190486
+Camera.cy: 363.21127188185824
 
+Camera.k1: 0.09498968715484918
+Camera.k2: -0.17996875302687732
+Camera.p1: -0.0035028242631541828
+Camera.p2: -0.004995214620689016
+
+###
 Camera.width: 640
 Camera.height: 480
 
@@ -31,7 +38,8 @@ Camera.RGB: 1
 ThDepth: 40.0
 
 # Deptmap values factor
-DepthMapFactor: 5000.0
+#DepthMapFactor: 5000.0
+DepthMapFactor: 1000
 
 #--------------------------------------------------------------------------------------------
 # ORB Parameters

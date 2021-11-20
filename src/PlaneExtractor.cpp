@@ -31,11 +31,11 @@ bool PlaneDetection::readColorImage(cv::Mat RGBImg)
 bool PlaneDetection::readDepthImage(cv::Mat depthImg, cv::Mat &K)
 {
 	cv::Mat depth_img = depthImg;
-	if (depth_img.empty() || depth_img.depth() != CV_16U)
-	{
-		cout << "WARNING: cannot read depth image. No such a file, or the image format is not 16UC1" << endl;
-		return false;
-	}
+//	if (depth_img.empty() || depth_img.depth() != CV_16U)
+//	{
+//		cout << "WARNING: cannot read depth image. No such a file, or the image format is not 16UC1" << endl;
+//		return false;
+//	}
 	int rows = depth_img.rows, cols = depth_img.cols;
 	int vertex_idx = 0;
 	for (int i = 0; i < rows; i+=1)
@@ -43,11 +43,15 @@ bool PlaneDetection::readDepthImage(cv::Mat depthImg, cv::Mat &K)
 		for (int j = 0; j < cols; j+=1)
 		{
 			double z = (double)(depth_img.at<unsigned short>(i, j)) / kScaleFactor;
+//            double z = (double)(depth_img.at<double>(i, j))/kScaleFactor;
 			if (_isnan(z))
 			{
 				cloud.vertices[vertex_idx++] = VertexType(0, 0, z);
 				continue;
 			}
+            if (z != 0){
+                int aaa = 1;
+            }
 			double x = ((double)j - K.at<float>(0, 2)) * z / K.at<float>(0, 0);
 			double y = ((double)i - K.at<float>(1, 2)) * z / K.at<float>(1, 1);
 			cloud.vertices[vertex_idx++] = VertexType(x, y, z);

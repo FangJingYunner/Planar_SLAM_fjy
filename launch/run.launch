@@ -1,0 +1,7 @@
+<launch>   
+
+ <arg name="bag" default="/home/fjy/Desktop/YunXiao_master/Planar_SLAM_fjy/src/AHC_Plane_Extract/data/rosbag_data/huan.bag"/>
+<!-- -r是播放的倍速，-s 从第几秒开始播放包 -pause 开始播放的时候先暂停 -clock     -u 10 表示只用前几秒的信息 -clock 播放的时候发布时钟信息 https://www.dazhuanlan.com/qiuzuqingbnwj/topics/1745657-->
+ <node pkg="rosbag" type="play" name="rosbag" args="--pause --clock $(arg bag) -r 1"/>
+
+</launch>

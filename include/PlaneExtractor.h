@@ -11,9 +11,9 @@
 
 typedef Eigen::Vector3d VertexType;
 
-const int kScaleFactor = 5000;
+const int kScaleFactor = 1000;
 
-const int kDepthWidth = 640;
+const int kDepthWidth = 840;
 const int kDepthHeight = 480;
 
 #ifdef __linux__

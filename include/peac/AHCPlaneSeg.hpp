@@ -381,7 +381,7 @@ struct PlaneSeg {
 		ds.Union(pa.rid, pb.rid);
 
 		//the new neighbors should be pa.nbs+pb.nbs-pa-pb
-		this->nbs.insert(pa.nbs.begin(), pa.nbs.end());
+		this->nbs.insert(pa.nbs.begin(), pa.nbs.end());//nbs是一个集合，不会有重复的指针
 		this->nbs.insert(pb.nbs.begin(), pb.nbs.end());
 		this->nbs.erase(&pa);
 		this->nbs.erase(&pb);
